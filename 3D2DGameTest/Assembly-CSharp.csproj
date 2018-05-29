@@ -51,25 +51,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\CameraControl.cs" />
-     <Compile Include="Assets\Scripts\MoveIcon.cs" />
-     <Compile Include="Assets\Scripts\PlayerManager.cs" />
-     <Compile Include="Assets\Scripts\TestCamera.cs" />
-     <Compile Include="Assets\Scripts\TestMove.cs" />
-     <Compile Include="Assets\Scripts\TochTest.cs" />
-     <Compile Include="Assets\Test.cs" />
-     <None Include="Assets\Query\Query-Chan\Shaders\PQ_Skin.shader" />
-     <None Include="Assets\Query\Query-Chan\Shaders\PQ_WrappingPaper.shader" />
-     <None Include="Assets\Query\Query-Chan\Shaders\PQ_Fur.shader" />
-     <None Include="Assets\Query\Query-Chan\Shaders\PQ_Standard.shader" />
-     <None Include="Assets\Query\Query-Chan\Shaders\PQ_Snow.shader" />
-     <None Include="Assets\Query\Query-Chan\Shaders\PQ_Halloween.shader" />
-     <None Include="Assets\Query\Query-Chan\Shaders\PQ_velvet.shader" />
-     <None Include="Assets\Query\Query-Chan\Shaders\PQ_VertexShadow.shader" />
-     <None Include="Assets\Query\Query-Chan\Shaders\PQ_HW_Ghost.shader" />
-     <None Include="Assets\Query\Query-Chan\Shaders\PQ_Ribbon.shader" />
-     <None Include="Assets\Query\Query-Chan\Shaders\PQ_TreeLight.shader" />
-     <None Include="Assets\Query\Query-Chan\Shaders\PQ_TransBlue.shader" />
+     <Compile Include="Assets\Hirano\Scripts\CameraControl.cs" />
+     <Compile Include="Assets\Hirano\Scripts\MoveIcon.cs" />
+     <Compile Include="Assets\Hirano\Scripts\PlayerManager.cs" />
+     <Compile Include="Assets\Hirano\Scripts\TestCamera.cs" />
+     <Compile Include="Assets\Hirano\Scripts\TestMove.cs" />
+     <Compile Include="Assets\Hirano\Scripts\TochTest.cs" />
+     <Compile Include="Assets\Hirano\Test.cs" />
+     <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_Skin.shader" />
+     <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_WrappingPaper.shader" />
+     <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_Fur.shader" />
+     <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_Standard.shader" />
+     <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_Snow.shader" />
+     <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_Halloween.shader" />
+     <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_velvet.shader" />
+     <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_VertexShadow.shader" />
+     <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_HW_Ghost.shader" />
+     <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_Ribbon.shader" />
+     <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_TreeLight.shader" />
+     <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_TransBlue.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
