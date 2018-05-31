@@ -51,6 +51,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Chikazawa\Scripts\Enemy.cs" />
+     <Compile Include="Assets\Chikazawa\Scripts\Get_Attack.cs" />
+     <Compile Include="Assets\Chikazawa\Scripts\Get_Pursuit.cs" />
+     <Compile Include="Assets\Chikazawa\Scripts\Players.cs" />
+     <Compile Include="Assets\Chikazawa\Scripts\State.cs" />
+     <Compile Include="Assets\Chikazawa\Scripts\StatefulObjectBase.cs" />
+     <Compile Include="Assets\Chikazawa\Scripts\StateMachine.cs" />
      <Compile Include="Assets\Hirano\Scripts\CameraControl.cs" />
      <Compile Include="Assets\Hirano\Scripts\MoveIcon.cs" />
      <Compile Include="Assets\Hirano\Scripts\PlayerManager.cs" />
@@ -58,18 +65,47 @@
      <Compile Include="Assets\Hirano\Scripts\TestMove.cs" />
      <Compile Include="Assets\Hirano\Scripts\TochTest.cs" />
      <Compile Include="Assets\Hirano\Test.cs" />
+     <Compile Include="Assets\Kato\Black Knight\AnimationEvent.cs" />
+     <Compile Include="Assets\Kato\Black Knight\demo\UnitControl.cs" />
+     <Compile Include="Assets\Kato\RPGPackFree\Scripts\BowString.cs" />
+     <Compile Include="Assets\Kato\RPGPackFree\Scripts\OpenChest.cs" />
+     <Compile Include="Assets\Kato\Scripts\GameSystem.cs" />
+     <Compile Include="Assets\Kato\Scripts\Roll.cs" />
+     <Compile Include="Assets\Kato\Scripts\TimeLimitObj.cs" />
+     <Compile Include="Assets\Kato\Scripts\TimerScript.cs" />
+     <Compile Include="Assets\Nakamura\Scripts\Camera\CameraController.cs" />
+     <Compile Include="Assets\Nakamura\Scripts\Camera\CameraWork.cs" />
+     <Compile Include="Assets\Nakamura\Scripts\Camera\CameraWork2D.cs" />
+     <Compile Include="Assets\Nakamura\Scripts\Camera\CameraWork3D.cs" />
+     <Compile Include="Assets\Nakamura\Scripts\Camera\PostEffect\PostEffect.cs" />
+     <Compile Include="Assets\Nakamura\Scripts\GameController.cs" />
+     <Compile Include="Assets\Nakamura\Scripts\Player\PlayerMover.cs" />
+     <Compile Include="Assets\Nakamura\Scripts\Player\PlayerMover2D.cs" />
+     <Compile Include="Assets\Nakamura\Scripts\Player\PlayerMover3D.cs" />
+     <Compile Include="Assets\Nakamura\Scripts\Player\TestPlayer.cs" />
+     <Compile Include="Assets\Nakamura\Scripts\Stage\MapData.cs" />
+     <Compile Include="Assets\Nakamura\Scripts\Stage\StageController.cs" />
+     <Compile Include="Assets\Nakamura\Scripts\Stage\StageObject.cs" />
+     <Compile Include="Assets\Nakamura\Scripts\Stage\StageObject2D.cs" />
+     <Compile Include="Assets\Nakamura\Scripts\Stage\StageObject3D.cs" />
      <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_Skin.shader" />
      <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_WrappingPaper.shader" />
      <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_Fur.shader" />
+     <None Include="Assets\Kato\Blade Sounds\Blade Sounds Readme.txt" />
      <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_Standard.shader" />
      <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_Snow.shader" />
      <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_Halloween.shader" />
+     <None Include="Assets\Nakamura\Shaders\Surface\WipeCircle.shader" />
      <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_velvet.shader" />
      <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_VertexShadow.shader" />
+     <None Include="Assets\Nakamura\Shaders\Surface\Grass.shader" />
+     <None Include="Assets\Nakamura\Shaders\Surface\Toon.shader" />
      <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_HW_Ghost.shader" />
+     <None Include="Assets\Kato\Black Knight\ReadMe.txt" />
      <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_Ribbon.shader" />
      <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_TreeLight.shader" />
      <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_TransBlue.shader" />
+     <None Include="Assets\Nakamura\Shaders\Surface\Blend.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
