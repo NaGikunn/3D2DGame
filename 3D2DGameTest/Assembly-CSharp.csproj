@@ -61,6 +61,7 @@
      <Compile Include="Assets\Hirano\Scripts\CameraControl.cs" />
      <Compile Include="Assets\Hirano\Scripts\MoveIcon.cs" />
      <Compile Include="Assets\Hirano\Scripts\PlayerManager.cs" />
+     <Compile Include="Assets\Hirano\Scripts\PlayerMove.cs" />
      <Compile Include="Assets\Hirano\Scripts\TestCamera.cs" />
      <Compile Include="Assets\Hirano\Scripts\TestMove.cs" />
      <Compile Include="Assets\Hirano\Scripts\TochTest.cs" />

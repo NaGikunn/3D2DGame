@@ -1571,7 +1571,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &766325949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3319,6 +3319,18 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 100072, guid: 14095ea4022442442ab073b0208dd9dc, type: 3}
   m_PrefabInternal: {fileID: 426055823}
+--- !u!114 &1759847941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1759847940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af6c333861b96304cb8ee6fe826848c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cameracontrol: {fileID: 2110002917}
 --- !u!4 &1759847942 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400072, guid: 14095ea4022442442ab073b0208dd9dc, type: 3}
@@ -3329,7 +3341,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1759847940}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: abef064161ac34b40a5124b4dd4dd0a0, type: 3}
   m_Name: 
