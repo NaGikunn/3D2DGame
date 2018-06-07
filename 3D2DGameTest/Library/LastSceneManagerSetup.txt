@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Sceane/MainScane.unity
+- path: Assets/Hirano/Sceane/MainScane.unity
   isLoaded: 1
   isActive: 1
