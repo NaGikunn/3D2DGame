@@ -66,14 +66,9 @@
      <Compile Include="Assets\Hirano\Scripts\TestMove.cs" />
      <Compile Include="Assets\Hirano\Scripts\TochTest.cs" />
      <Compile Include="Assets\Hirano\Test.cs" />
-     <Compile Include="Assets\Kato\Black Knight\AnimationEvent.cs" />
-     <Compile Include="Assets\Kato\Black Knight\demo\UnitControl.cs" />
-     <Compile Include="Assets\Kato\RPGPackFree\Scripts\BowString.cs" />
-     <Compile Include="Assets\Kato\RPGPackFree\Scripts\OpenChest.cs" />
      <Compile Include="Assets\Kato\Scripts\GameSystem.cs" />
      <Compile Include="Assets\Kato\Scripts\Roll.cs" />
      <Compile Include="Assets\Kato\Scripts\TimeLimitObj.cs" />
-     <Compile Include="Assets\Kato\Scripts\TimerScript.cs" />
      <Compile Include="Assets\Nakamura\Scripts\Camera\CameraController.cs" />
      <Compile Include="Assets\Nakamura\Scripts\Camera\CameraWork.cs" />
      <Compile Include="Assets\Nakamura\Scripts\Camera\CameraWork2D.cs" />
@@ -102,7 +97,6 @@
      <None Include="Assets\Nakamura\Shaders\Surface\Grass.shader" />
      <None Include="Assets\Nakamura\Shaders\Surface\Toon.shader" />
      <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_HW_Ghost.shader" />
-     <None Include="Assets\Kato\Black Knight\ReadMe.txt" />
      <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_Ribbon.shader" />
      <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_TreeLight.shader" />
      <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_TransBlue.shader" />
