@@ -19,8 +19,13 @@ MonoBehaviour:
     height: 997
   m_ShowMode: 4
   m_Title: 
+<<<<<<< HEAD
   m_RootView: {fileID: 3}
   m_MinSize: {x: 950, y: 542}
+=======
+  m_RootView: {fileID: 2}
+  m_MinSize: {x: 950, y: 300}
+>>>>>>> cb66cea186bf5a7033557a376606f9fe558fae9d
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -131,15 +136,24 @@ MonoBehaviour:
     width: 1920
     height: 947
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_MinSize: {x: 887, y: 492}
   m_MaxSize: {x: 16012, y: 14042}
 =======
   m_MinSize: {x: 681, y: 492}
+=======
+  m_MinSize: {x: 683, y: 492}
+>>>>>>> cb66cea186bf5a7033557a376606f9fe558fae9d
   m_MaxSize: {x: 14004, y: 14042}
 >>>>>>> 9cdb74ee5f4beb3b18546aa985abb677b5179f6e
   vertical: 1
+<<<<<<< HEAD
   controlID: 13
 --- !u!114 &7
+=======
+  controlID: 53
+--- !u!114 &6
+>>>>>>> cb66cea186bf5a7033557a376606f9fe558fae9d
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -160,15 +174,24 @@ MonoBehaviour:
     width: 1920
     height: 947
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_MinSize: {x: 887, y: 492}
   m_MaxSize: {x: 16012, y: 14042}
 =======
   m_MinSize: {x: 681, y: 492}
+=======
+  m_MinSize: {x: 683, y: 492}
+>>>>>>> cb66cea186bf5a7033557a376606f9fe558fae9d
   m_MaxSize: {x: 14004, y: 14042}
 >>>>>>> 9cdb74ee5f4beb3b18546aa985abb677b5179f6e
   vertical: 0
+<<<<<<< HEAD
   controlID: 14
 --- !u!114 &8
+=======
+  controlID: 54
+--- !u!114 &7
+>>>>>>> cb66cea186bf5a7033557a376606f9fe558fae9d
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -188,11 +211,19 @@ MonoBehaviour:
     y: 0
     width: 1641
     height: 947
+<<<<<<< HEAD
   m_MinSize: {x: 610, y: 492}
   m_MaxSize: {x: 12010, y: 14042}
   vertical: 1
   controlID: 15
 --- !u!114 &9
+=======
+  m_MinSize: {x: 406, y: 492}
+  m_MaxSize: {x: 10002, y: 14042}
+  vertical: 1
+  controlID: 55
+--- !u!114 &8
+>>>>>>> cb66cea186bf5a7033557a376606f9fe558fae9d
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -211,6 +242,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1641
     height: 667
   m_MinSize: {x: 610, y: 221}
@@ -218,6 +250,15 @@ MonoBehaviour:
   vertical: 0
   controlID: 16
 --- !u!114 &10
+=======
+    width: 1369
+    height: 497
+  m_MinSize: {x: 406, y: 221}
+  m_MaxSize: {x: 8006, y: 4021}
+  vertical: 0
+  controlID: 56
+--- !u!114 &9
+>>>>>>> cb66cea186bf5a7033557a376606f9fe558fae9d
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -233,11 +274,19 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 204
     height: 667
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
+=======
+    width: 405
+    height: 497
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 14}
+>>>>>>> cb66cea186bf5a7033557a376606f9fe558fae9d
   m_Panes:
   - {fileID: 15}
   m_Selected: 0
@@ -437,6 +486,7 @@ MonoBehaviour:
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_SelectedIDs: 
     m_LastClickedID: 0
     m_ExpandedIDs: 9efbffff00000000
@@ -445,6 +495,11 @@ MonoBehaviour:
     m_LastClickedID: 0
     m_ExpandedIDs: e2f6ffff9efbffff000000005a380000
 >>>>>>> 9cdb74ee5f4beb3b18546aa985abb677b5179f6e
+=======
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: aaaeffffc0d7ffff00e8ffff40efffff02f3ffff76f4ffff5af9ffff00000000
+>>>>>>> cb66cea186bf5a7033557a376606f9fe558fae9d
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -543,12 +598,16 @@ MonoBehaviour:
 =======
     m_Target: {x: -0.085014865, y: -0.09401474, z: 0.008057905, w: -0.99190164}
     speed: 2
-    m_Value: {x: -0.085014865, y: -0.09401474, z: 0.008057905, w: -0.99190164}
+    m_Value: {x: -0.08501487, y: -0.09401475, z: 0.008057906, w: -0.99190164}
   m_Size:
-    m_Target: 6.1581483
+    m_Target: 21.139303
     speed: 2
+<<<<<<< HEAD
     m_Value: 6.1581483
 >>>>>>> 9cdb74ee5f4beb3b18546aa985abb677b5179f6e
+=======
+    m_Value: 21.139303
+>>>>>>> cb66cea186bf5a7033557a376606f9fe558fae9d
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -627,6 +686,7 @@ MonoBehaviour:
     m_SearchArea: 0
     m_Folders:
 <<<<<<< HEAD
+<<<<<<< HEAD
     - Assets
   m_ViewMode: 1
   m_StartGridSize: 71
@@ -642,19 +702,28 @@ MonoBehaviour:
     m_ExpandedIDs: 00000000a8270000cc280000362900003a290000da290000e0290000122a0000a22a00009c2b0000a02b0000082c00007a30000000ca9a3bffffff7f
 =======
     - Assets/Hirano/Model
+=======
+    - Assets/Hirano/Sceane
+>>>>>>> cb66cea186bf5a7033557a376606f9fe558fae9d
   m_ViewMode: 1
   m_StartGridSize: 71
   m_LastFolders:
-  - Assets/Hirano/Model
+  - Assets/Hirano/Sceane
   m_LastFoldersGridSize: 71
   m_LastProjectPath: C:\Users\user\Documents\GitKraKen\3d2dgame\3D2DGameTest
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
     m_SelectedIDs: 9e2e0000
     m_LastClickedID: 11934
     m_ExpandedIDs: 00000000f0270000ea2800007a2a00008e2b0000942b0000bc2c0000c82c0000522d0000242e00007030000096300000a63000009e310000a6320000b236000000ca9a3bffffff7f
 >>>>>>> 9cdb74ee5f4beb3b18546aa985abb677b5179f6e
+=======
+    m_SelectedIDs: ea290000
+    m_LastClickedID: 10730
+    m_ExpandedIDs: 000000002e28000028290000b62a0000ca2b0000d02b0000f82c0000042d00008c2d00005e2e0000b6300000dc300000ec300000d0310000ca36000000ca9a3bffffff7f
+>>>>>>> cb66cea186bf5a7033557a376606f9fe558fae9d
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -683,10 +752,14 @@ MonoBehaviour:
     m_SelectedIDs: 
     m_LastClickedID: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000a8270000cc280000362900003a290000da290000e0290000122a0000a22a00009c2b0000a02b0000082c00007a300000
 =======
     m_ExpandedIDs: 00000000f0270000ea2800007a2a00008e2b0000942b0000bc2c0000c82c0000522d0000242e00007030000096300000a63000009e310000a6320000b2360000
 >>>>>>> 9cdb74ee5f4beb3b18546aa985abb677b5179f6e
+=======
+    m_ExpandedIDs: 000000002e28000028290000b62a0000ca2b0000d02b0000f82c0000042d00008c2d00005e2e0000b6300000dc300000ec300000d0310000d8320000ca360000
+>>>>>>> cb66cea186bf5a7033557a376606f9fe558fae9d
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -713,7 +786,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: ae270000907ffdff78a10200762f0000bc2e00005c3000007c300000c6290000e02a0000022a0000862f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
