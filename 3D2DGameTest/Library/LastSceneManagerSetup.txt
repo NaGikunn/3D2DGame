@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Hirano/Sceane/MainScane.unity
+- path: Assets/Chikazawa/test.unity
   isLoaded: 1
   isActive: 1

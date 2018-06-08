@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//サンプル用のnamespaceを使用してみる
+//namespaceを使用してメソッドを共用
 namespace StateMachine
 {
     public enum status
@@ -17,8 +17,8 @@ namespace StateMachine
     {
         //個体で違う数値・参照が必要な変数はここに書く
         Transform player;
-        [SerializeField]
-        bool IsFly;
+
+        public bool IsFly;
 
         [SerializeField] //巡回地点
         Transform[] StayPoint;
@@ -63,7 +63,7 @@ namespace StateMachine
             ChangeState(status.Stay);
 
         }
-        void OnTriggerEnter2D(Collider2D collider)
+        void OnCollisionEnter2D(Collision2D collider)
         {
             if (collider.gameObject.tag == "Player")
                 attack.AttackStopflg = true;
@@ -77,11 +77,11 @@ namespace StateMachine
         {
             //引数はここで指定　
             //baseは何もしない　"owner"でEnemyで使用している変数を使用可能にする
-            public StateWalk(Enemy owner) : base(owner) {}
+            public StateWalk(Enemy owner) : base(owner) { }
 
             //巡回地点の変更フラグ
-            int PointCount = 0 ;
-            float StayTime = 0 ;
+            int PointCount = 0;
+            float StayTime = 0;
             //巡回地点＠Enemy owner.変数名 で呼び出し
             //public Transform[] StayPoint;
             //目標地点
@@ -100,7 +100,7 @@ namespace StateMachine
                     //地点を取得して目標地点に設定
                     Change_Point();
                 }
-                else if (owner.P_Targetlostflg || !owner.IsFly)//プレーヤーを見失ったらその地点に行く*歩行型のみ
+                else if (owner.P_Targetlostflg && !owner.IsFly)//プレーヤーを見失ったらその地点に行く*歩行型のみ
                 {
                     targetPoint = owner.player.gameObject.transform.position;
                 }
@@ -122,7 +122,7 @@ namespace StateMachine
                 float sqrDistanceToTarget = Vector3.SqrMagnitude(owner.transform.position - targetPoint);
                 if (sqrDistanceToTarget < owner.changeTargetDistance)
                 {
-                    if (owner.P_Targetlostflg )
+                    if (owner.P_Targetlostflg)
                     {
                         if (StayTime < owner.TargetLostTime)
                         {
@@ -153,8 +153,9 @@ namespace StateMachine
                     if (diff.x > 0)
                     {
                         owner.moveVec = 1;
-                        //目標の方向を向いて進む
-                        owner.transform.rotation = Quaternion.FromToRotation(Vector3.right, diff);
+                        //目標の方向を向いて進む 歩行型は向きは変わらない
+                        if (owner.IsFly)
+                            owner.transform.rotation = Quaternion.FromToRotation(Vector3.right, diff);
                         owner.transform.Translate(Vector3.right * owner.speed * Time.deltaTime);
 
                     }
@@ -162,7 +163,8 @@ namespace StateMachine
                     {
                         owner.moveVec = -1;
                         //
-                        owner.transform.rotation = Quaternion.FromToRotation(Vector3.left, diff);
+                        if (owner.IsFly)
+                            owner.transform.rotation = Quaternion.FromToRotation(Vector3.left, diff);
                         owner.transform.Translate(Vector3.left * owner.speed * Time.deltaTime);
 
                     }
@@ -180,13 +182,13 @@ namespace StateMachine
 
             }
 
-            public override void Exit() {}
+            public override void Exit() { }
 
             //次の目標地点を設定する
             void Change_Point()
             {
                 //次の地点を取得
-                PointCount++ ;
+                PointCount++;
                 //一巡したら最初の地点を取得
                 if (owner.StayPoint.Length <= PointCount)
                 {
@@ -205,7 +207,13 @@ namespace StateMachine
             public StatePursuit(Enemy owner) : base(owner) { }
 
 
-            public override void Enter() { }
+            public override void Enter()
+            {
+                if (owner.IsFly && owner.attack.AttackStopflg)
+                {
+                    owner.ChangeState(status.Stay);
+                }
+            }
 
             public override void Execute()
             {
@@ -238,7 +246,7 @@ namespace StateMachine
             {
                 //距離と位置を取得
                 Vector3 diff = (owner.player.gameObject.transform.position - owner.transform.position);
-                
+
                 //プレーヤーの位置に合わせて方向を調整する
                 //右向き
                 if (diff.x > 0)
@@ -285,7 +293,7 @@ namespace StateMachine
             {
                 //プレーヤーとの距離・方向を取得
                 DistanceToPlayer = owner.player.gameObject.transform.position - owner.transform.position;
-                
+
                 //数値がマイナスにならないようにすることで、判定を楽に出来るようにする。
                 if (DistanceToPlayer.x < 0)
                     DistanceToPlayer.x = -DistanceToPlayer.x;
@@ -359,7 +367,7 @@ namespace StateMachine
                     owner.moveVec = 1;
                     owner.transform.localScale = new Vector3(owner.moveVec, 1f, 1f);
 
-                    owner.transform.localRotation = Quaternion.FromToRotation(Vector3.right,DistanceToPlayer);
+                    owner.transform.localRotation = Quaternion.FromToRotation(Vector3.right, DistanceToPlayer);
                     owner.transform.Translate(Vector3.right * owner.speed * Time.deltaTime);
                 }
                 else if (DistanceToPlayer.x < 0)
@@ -376,8 +384,8 @@ namespace StateMachine
             void Leave()
             {
                 //距離と位置を取得
-                if(!owner.IsFly)
-                DistanceToPlayer = (owner.player.gameObject.transform.position - owner.transform.position);
+                if (!owner.IsFly)
+                    DistanceToPlayer = (owner.player.gameObject.transform.position - owner.transform.position);
 
                 if (DistanceToPlayer.x > 0)
                 {

@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Get_Attack : MonoBehaviour {
+public class Get_Attack : MonoBehaviour
+{
 
     //攻撃判定
     public bool AttackFlg = false;
@@ -20,20 +21,21 @@ public class Get_Attack : MonoBehaviour {
     //// Update is called once per frame
     void Update()
     {
-        if (GetAttack&&AttackFlg)
+        if (GetAttack && AttackFlg && !AttackStopflg && !enemy.IsFly)
         {
             GetAttack = false;
             Debug.Log("ATTACK_HIT!!");
         }
         if (AttackStopflg)
         {
-            AttackStopTime = 0;
             if (AttackStopTime >= 3f)
             {
                 AttackStopflg = false;
                 Debug.Log("ATTACK READY");
+                AttackStopTime = 0;
             }
             AttackStopTime += Time.deltaTime;
+            Debug.Log(AttackStopTime);
         }
 
     }
@@ -56,17 +58,15 @@ public class Get_Attack : MonoBehaviour {
             ChangeFlg();
             GetAttack = false;
         }
-        if (AttackStopflg)
-        {
-            AttackStopflg = false;
-            Debug.Log("ATTACK READY");
-        }
+        //if (AttackStopflg)
+        //{
+        //    AttackStopflg = false;
+        //    Debug.Log("ATTACK READY");
+        //}
 
     }
     void ChangeFlg()
     {
         AttackFlg = !AttackFlg;
     }
-
-
 }
