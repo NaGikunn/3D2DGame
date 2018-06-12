@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Matubara/StageSelect.unity
+- path: Assets/Matubara/Stage1.unity
   isLoaded: 1
   isActive: 1
