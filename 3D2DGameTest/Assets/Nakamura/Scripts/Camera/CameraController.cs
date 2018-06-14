@@ -7,58 +7,55 @@ namespace Dimension.Camera2D3D
 {
     public class CameraController : MonoBehaviour
     {
-        public TestPlayer player;
-        CameraWork cameraWork;
-        PostEffect postEffect;
+        GameController gController;
 
+        public TestPlayer player;
+        CameraWork cWork;
+
+        //-----------------------------------------------------
+        //  プロパティ
+        //-----------------------------------------------------
+        public GameController GController { get; private set; }
+        public bool IsStop { get; set; }
         //=====================================================
         void Start()
         {
-            if (cameraWork == null) ChangeWork<CameraWork3D>();
-            postEffect = GetComponent<PostEffect>();
+            IsStop = false;
+            if (cWork == null) ChangeWork<CameraWork3D>();
         }
-        void FixedUpdate()
+        void LateUpdate()
         {
-            if (CheckWork()) cameraWork.Move();
+            if (IsStop) return;
+            cWork.Move();
         }
         //-----------------------------------------------------
         //  カメラワークを変更
         //-----------------------------------------------------
         public void ChangeWork<CW>() where CW : CameraWork
         {
-            Destroy(cameraWork);
-            cameraWork = gameObject.AddComponent<CW>();
-            cameraWork.CameraTarget = player.transform;
-            cameraWork.Initialize();
+            Destroy(cWork);
+            cWork = gameObject.AddComponent<CW>();
+            cWork.SetTarget(player);
+            cWork.Initialize();
+        }
+
+        public void Change()
+        {
+            ChangeWork<CameraWorkNull>();
         }
         //-----------------------------------------------------
-        //  Cameraが動作可能か
+        //  ゲームコントローラー受け取り
         //-----------------------------------------------------
-        bool CheckWork()
+        public void SetGameController(GameController gCon)
         {
-            return cameraWork != null && cameraWork.enabled;
+            if (GController == null) GController = gCon;
         }
         //-----------------------------------------------------
-        //  フェードアウト
+        //  ゲームモード取得
         //-----------------------------------------------------
-        public IEnumerator FadeOutCoroutine()
+        public Mode GetGameMode()
         {
-            yield return StartCoroutine(postEffect.FadeCoroutine(Fade.OUT));
-        }
-        //-----------------------------------------------------
-        //  フェードイン
-        //-----------------------------------------------------
-        public IEnumerator FadeInCoroutine()
-        {
-            yield return StartCoroutine(postEffect.FadeCoroutine(Fade.IN));
-        }
-        //-----------------------------------------------------
-        // ポストエフェクト
-        //-----------------------------------------------------
-        void OnRenderImage(RenderTexture src, RenderTexture dest)
-        {
-            if (postEffect == null) return;
-            Graphics.Blit(src, dest, postEffect.EffectMaterial);
+            return GController.GameMode;
         }
     }
 }

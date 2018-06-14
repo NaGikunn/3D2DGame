@@ -9,26 +9,40 @@ namespace Dimension.Player
         //-----------------------------------------------------
         public override void Initialize()
         {
-            transformCache.position = new Vector3(0, 1, -4.5f);
+            //rigidbodyCache.useGravity = true;
 
-            Destroy(GetComponent<Rigidbody>());
-            Destroy(GetComponent<Collider>());
-            gameObject.AddComponent<CapsuleCollider2D>();
-            gameObject.AddComponent<Rigidbody2D>();
+            Vector3 pos = transformCache.localPosition;
+
+            if (PController.IsRight) pos.x = -10;
+            else                     pos.x =  10;
+
+            transformCache.localPosition = pos;
         }
         //-----------------------------------------------------
         //  行動
         //-----------------------------------------------------
-        public override void Mover()
+        public override void Move(KeyState key)
         {
-
-            if (Input.GetKey(KeyCode.RightArrow))
-            {
-                transformCache.position += Camera.main.transform.right * 3.0f * Time.deltaTime;
-            }
-            else if (Input.GetKey(KeyCode.LeftArrow))
-            {
+            // 移動
+            if (key.Axis.x > 0.5f)  {
+                transformCache.position +=  Camera.main.transform.right * 3.0f * Time.deltaTime;
+            } else 
+            if (key.Axis.x < -0.5f) {
                 transformCache.position += -Camera.main.transform.right * 3.0f * Time.deltaTime;
+            }
+
+            // ジャンプ
+            if (PController.IsGround && key.Jump) {
+                rigidbodyCache.AddForce(Vector3.up * 250);
+            }
+            
+            // モード切替
+            if(key.Action) {
+                Vector3 pos = transformCache.position;
+                pos.x = 0;
+                transformCache.localPosition = pos;
+
+                PController.GController.ChangeDimension();
             }
         }
     }
