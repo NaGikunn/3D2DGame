@@ -12,7 +12,6 @@ namespace Dimension.Player
         void Start()
         {
             IsStop = false;
-            ChangeMover<PlayerMover3D>();
         }
         void Update()
         {

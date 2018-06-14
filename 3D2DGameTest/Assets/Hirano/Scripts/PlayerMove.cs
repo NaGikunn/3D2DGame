@@ -18,7 +18,6 @@ public class PlayerMove : MonoBehaviour
     float pz = 0.0f;
     //プレイヤーの位置
     Vector3 playerPos;
-    private Transform lookAt;
     // Use this for initialization
     void Start ()
     {

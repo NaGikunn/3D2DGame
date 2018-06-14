@@ -58,10 +58,15 @@
      <Compile Include="Assets\Chikazawa\Scripts\State.cs" />
      <Compile Include="Assets\Chikazawa\Scripts\StatefulObjectBase.cs" />
      <Compile Include="Assets\Chikazawa\Scripts\StateMachine.cs" />
+     <Compile Include="Assets\Hirano\Move.cs" />
      <Compile Include="Assets\Hirano\Scripts\CameraControl.cs" />
      <Compile Include="Assets\Hirano\Scripts\MoveIcon.cs" />
+     <Compile Include="Assets\Hirano\Scripts\Player2DController.cs" />
+     <Compile Include="Assets\Hirano\Scripts\Player3DController.cs" />
      <Compile Include="Assets\Hirano\Scripts\PlayerManager.cs" />
+     <Compile Include="Assets\Hirano\Scripts\PlayerManagerController.cs" />
      <Compile Include="Assets\Hirano\Scripts\PlayerMove.cs" />
+     <Compile Include="Assets\Hirano\Scripts\PlayerMoveController.cs" />
      <Compile Include="Assets\Hirano\Scripts\TestCamera.cs" />
      <Compile Include="Assets\Hirano\Scripts\TestMove.cs" />
      <Compile Include="Assets\Hirano\Scripts\TochTest.cs" />

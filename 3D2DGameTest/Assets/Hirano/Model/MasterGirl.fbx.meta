@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 0782ffab9641b154d8dd40365e20c3a9
-timeCreated: 1528263624
+guid: 41c2923d3c5d61741a3015648e434335
+timeCreated: 1528090902
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -109,12 +109,12 @@ ModelImporter:
     400100: upper_arm.R
     2100000: palette
     4300000: MagicalAdventuel3
-    7400000: armature|Atack
+    7400000: armature|Atack.001
     7400002: armature|Jump
     7400004: armature|Stand
     7400006: armature|Walk
-    7400008: armature|Stand
-    7400010: armature|Walk
+    7400008: armature|Stand (1)
+    7400010: armature|Jump
     9500000: //RootNode
     13700000: MagicalAdventuel3
   externalObjects:
@@ -150,17 +150,17 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: armature|Atack
-      takeName: armature|Atack.001
+      name: armature|Jump
+      takeName: armature|Jump
       firstFrame: 0
-      lastFrame: 1
+      lastFrame: 40
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -237,7 +237,7 @@ ModelImporter:
       name: armature|Walk
       takeName: armature|Walk
       firstFrame: 0
-      lastFrame: 40
+      lastFrame: 60
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -463,13 +463,13 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: MasterGirl(Clone)
+    - name: MasterGirl_Ver2(Clone)
       parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: armature
-      parentName: MasterGirl(Clone)
+      parentName: MasterGirl_Ver2(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
       scale: {x: 100, y: 100, z: 100}
@@ -511,18 +511,18 @@ ModelImporter:
     - name: upper_arm.L
       parentName: shoulder.L
       position: {x: -0.00074926164, y: 0.0043316106, z: -0.00028611964}
-      rotation: {x: 0.15179981, y: -0.7289936, z: 0.1340827, w: 0.6538709}
-      scale: {x: 0.9999993, y: 0.99999917, z: 1.0000002}
+      rotation: {x: 0.15179978, y: -0.7289936, z: 0.13408267, w: 0.6538709}
+      scale: {x: 0.9999993, y: 0.9999991, z: 1.0000001}
     - name: forearm.L
       parentName: upper_arm.L
       position: {x: 9.65083e-10, y: 0.003246283, z: -8.381903e-11}
-      rotation: {x: -0.0013206002, y: 0.10242281, z: 0.00012713668, w: 0.9947401}
-      scale: {x: 1.0000006, y: 1.0000004, z: 0.9999998}
+      rotation: {x: -0.0013205555, y: 0.10242281, z: 0.00012713668, w: 0.9947401}
+      scale: {x: 1.0000007, y: 1.0000005, z: 0.9999998}
     - name: hand.L
       parentName: forearm.L
       position: {x: -6.1001626e-10, y: 0.004516206, z: 2.9802322e-10}
-      rotation: {x: -0.006227863, y: 0.67225677, z: -0.0050772857, w: 0.7402744}
-      scale: {x: 1.0000002, y: 0.99999994, z: 1.0000002}
+      rotation: {x: -0.0062278807, y: 0.67225677, z: -0.0050772885, w: 0.7402744}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1}
     - name: hand.L_end
       parentName: hand.L
       position: {x: -0, y: 0.0014278113, z: 0}
@@ -714,7 +714,7 @@ ModelImporter:
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: MagicalAdventuel3
-      parentName: MasterGirl(Clone)
+      parentName: MasterGirl_Ver2(Clone)
       position: {x: 0.106922604, y: 0, z: -0.16577914}
       rotation: {x: 0.00000008146034, y: 0, z: -0, w: 1}
       scale: {x: 19.029076, y: 19.029076, z: 19.029076}
