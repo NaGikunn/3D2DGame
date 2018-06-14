@@ -16,11 +16,12 @@ namespace StateMachine
     public class Enemy : StatefulObjectBase<Enemy, status>//<>
     {
         //個体で違う数値・参照が必要な変数はここに書く
-        Transform player;
+        public Transform player;
+        Vector3 StartPos;                  //初期位置
 
         public bool IsFly;
 
-        [SerializeField] //巡回地点
+        [SerializeField]                   //巡回地点
         Transform[] StayPoint;
 
         [SerializeField]
@@ -52,6 +53,9 @@ namespace StateMachine
         {
             // 始めにプレイヤーの位置を取得できるようにする
             player = GameObject.FindWithTag("Player").transform;
+   
+            //初期位置を保存してリスポーン出来るようにする
+            StartPos = transform.position;
 
             // ステートマシンの初期設定
             stateList.Add(new StateWalk(this));
@@ -63,10 +67,12 @@ namespace StateMachine
             ChangeState(status.Stay);
 
         }
-        void OnCollisionEnter2D(Collision2D collider)
+        void OnCollisionEnter(Collision collider)
         {
             if (collider.gameObject.tag == "Player")
                 attack.AttackStopflg = true;
+            Debug.Log("ATTACK_HIT!!");
+
         }
 
 
@@ -82,6 +88,13 @@ namespace StateMachine
             //巡回地点の変更フラグ
             int PointCount = 0;
             float StayTime = 0;
+
+            //リスポーン感知
+            Vector3 MoveCanceler;
+            //リスポーン待機時間
+            float Count_MoveCancel;
+            //リスポーン起動範囲
+            Vector3 CancelArea = new Vector3(2, 2, 2);
             //巡回地点＠Enemy owner.変数名 で呼び出し
             //public Transform[] StayPoint;
             //目標地点
@@ -92,6 +105,7 @@ namespace StateMachine
             {
                 owner.moveVec = 1;      //向きを初期化
                 StayTime = 0;           //待機時間を初期化
+                Count_MoveCancel = 0;   //リスポーン待機時間を初期化
                 //初期呼び出し時、最初の巡回地点を設定する
                 if (targetPoint == Vector3.zero)
                 {
@@ -113,8 +127,17 @@ namespace StateMachine
 
             public override void Execute()//Update処理
             {
-                //追跡範囲に入ったら、追跡ステートに遷移
-                if (owner.pursuit.PursuitFlg)
+                //5秒毎に更新
+                if(owner.StayPoint.Length >= 2 || owner.P_Targetlostflg)
+                    Count_MoveCancel += Time.deltaTime;
+                if (Count_MoveCancel >= 5.0f)
+                {
+                    if(CancelArea.x >= MoveCanceler.x - owner.transform.position.x && CancelArea.y >= MoveCanceler.y - owner.transform.position.y)
+                    MoveCanceler = owner.transform.position;
+
+                }
+                //間に障害物がない状態で追跡範囲に入ったら、追跡ステートに遷移
+                if (owner.pursuit.PursuitFlg && owner.pursuit.hitTag == "Player" && !owner.attack.AttackStopflg)
                 {
                     owner.ChangeState(status.Pursuit);
                 }
@@ -182,7 +205,10 @@ namespace StateMachine
 
             }
 
-            public override void Exit() { }
+            public override void Exit()
+            {
+                owner.P_Targetlostflg = false;
+            }
 
             //次の目標地点を設定する
             void Change_Point()
@@ -206,13 +232,16 @@ namespace StateMachine
         {
             public StatePursuit(Enemy owner) : base(owner) { }
 
-
+            float StayCount = 0;
+            bool exitPursuit;
             public override void Enter()
             {
+                //攻撃直後は徘徊に戻す*飛行型
                 if (owner.IsFly && owner.attack.AttackStopflg)
                 {
                     owner.ChangeState(status.Stay);
                 }
+                exitPursuit = false;
             }
 
             public override void Execute()
@@ -224,14 +253,23 @@ namespace StateMachine
                     owner.ChangeState(status.Attack);
                 }
 
-                // 捕捉エリアから出ると、徘徊ステートに遷移
-                if (!owner.pursuit.PursuitFlg)
+                // 2秒以上視線から外れるか、捕捉エリアから出ると徘徊ステートに遷移
+                if (exitPursuit | !owner.pursuit.PursuitFlg )
                 {
                     owner.ChangeState(status.Stay);
                 }
                 //追跡
                 Pursuit();
                 //owner.transform.Translate(Vector3.right * owner.speed * Time.deltaTime);
+                if(owner.pursuit.hitTag != "Player")
+                {
+                    StayCount += Time.deltaTime;
+                    if (StayCount >= 2.0f)
+                    {
+                        exitPursuit = true;
+                        StayCount = 0;
+                    }
+                }
             }
 
 
@@ -256,7 +294,11 @@ namespace StateMachine
                     owner.transform.localScale = new Vector3(owner.moveVec, 1f, 1f);
                     //プレーヤーの方向を向いて進む
                     owner.transform.localRotation = Quaternion.FromToRotation(Vector3.right, diff);
+
+                    if (owner.IsFly)
                     owner.transform.Translate(Vector3.right * owner.speed * Time.deltaTime);
+                    else
+                    owner.transform.Translate(Vector3.right * owner.speed * Time.deltaTime, Space.World);
                 }
                 //左向き
                 else if (diff.x < 0)
@@ -265,7 +307,11 @@ namespace StateMachine
                     owner.transform.localScale = new Vector3(owner.moveVec, 1f, 1f);
 
                     owner.transform.localRotation = Quaternion.FromToRotation(Vector3.left, diff);
+
+                    if (owner.IsFly)
                     owner.transform.Translate(Vector3.left * owner.speed * Time.deltaTime);
+                    else
+                    owner.transform.Translate(Vector3.left * owner.speed * Time.deltaTime, Space.World);
                 }
 
             }
@@ -383,7 +429,7 @@ namespace StateMachine
             //後退処理
             void Leave()
             {
-                //距離と位置を取得
+                //距離と方向を取得
                 if (!owner.IsFly)
                     DistanceToPlayer = (owner.player.gameObject.transform.position - owner.transform.position);
 

@@ -23,8 +23,8 @@ public class Get_Attack : MonoBehaviour
     {
         if (GetAttack && AttackFlg && !AttackStopflg && !enemy.IsFly)
         {
-            GetAttack = false;
             Debug.Log("ATTACK_HIT!!");
+            GetAttack = false;
         }
         if (AttackStopflg)
         {
@@ -35,12 +35,12 @@ public class Get_Attack : MonoBehaviour
                 AttackStopTime = 0;
             }
             AttackStopTime += Time.deltaTime;
-            Debug.Log(AttackStopTime);
+            //Debug.Log(AttackStopTime);
         }
 
     }
 
-    void OnTriggerEnter2D(Collider2D collider)
+    void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.tag == "Player")
             ChangeFlg();
@@ -51,7 +51,7 @@ public class Get_Attack : MonoBehaviour
 
     //}
 
-    void OnTriggerExit2D(Collider2D collider)
+    void OnTriggerExit(Collider collider)
     {
         if (collider.gameObject.tag == "Player")
         {
