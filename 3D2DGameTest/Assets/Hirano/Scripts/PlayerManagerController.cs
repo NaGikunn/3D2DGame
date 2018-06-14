@@ -11,17 +11,13 @@ public class PlayerManagerController : MonoBehaviour
 	void Start ()
     {
         isStop = false;
-        PlayerMoveChange<Player2DController>();
+        PlayerMoveChange<Player3DController>();
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
         if (isStop) return;
-	}
-
-    void FixedUpdate()
-    {
         playermove.Movement();
     }
 
