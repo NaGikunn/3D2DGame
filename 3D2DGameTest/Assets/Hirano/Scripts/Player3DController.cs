@@ -40,10 +40,10 @@ public class Player3DController : PlayerMoveController
         {
             anim.SetBool("walk", false);
         }
-        //BFFALO　２番キーを押したら
-        if (Input.GetButtonDown("JoyStick1"))
-        {
-            Manager.PlayerMoveChange<Player2DController>();
-        }
+        ////BFFALO　２番キーを押したら
+        //if (Input.GetButtonDown("JoyStick1"))
+        //{
+        //    Manager.PlayerMoveChange<Player2DController>();
+        //}
     }
 }

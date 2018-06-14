@@ -79,7 +79,8 @@ namespace Dimension.Player
             }
             else
             {   // ゲームパッド
-
+                //BFFALO　２番キーを押したら
+                key.Action = Input.GetButtonDown("JoyStick1");
             }
 
             return key;

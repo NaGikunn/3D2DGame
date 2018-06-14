@@ -16,6 +16,7 @@ public abstract class PlayerMoveController : MonoBehaviour
         PositionInitialization();
         anim = GetComponent<Animator>();
         rig = GetComponent<Rigidbody>();
+        Manager = GetComponent<PlayerManagerController>();
     }
 
     public abstract void PositionInitialization();
