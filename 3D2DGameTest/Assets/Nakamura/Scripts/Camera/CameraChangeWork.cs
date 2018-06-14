@@ -24,7 +24,7 @@ namespace Dimension.Camera2D3D
         public override void Initialize()
         {
             fromPoint = transformCache.localPosition;
-            nextPoint = Target.LocalPosition;
+            nextPoint = Target.transform.localPosition;
             fromDir   = transformCache.localEulerAngles;
             changeValue = 0;
 
@@ -61,7 +61,7 @@ namespace Dimension.Camera2D3D
             MyCamera.fieldOfView            = Mathf.Lerp(fromView, nextView, changeValue);
             transformCache.localPosition    = Vector3.Lerp(fromPoint, nextPoint, changeValue);
 
-            transformCache.LookAt(Target.Position);
+            transformCache.LookAt(Target.transform.position);
             //transformCache.forward          = Vector3.Lerp(fromDir, nextDir, changeValue);
 
             if(IsFinish())

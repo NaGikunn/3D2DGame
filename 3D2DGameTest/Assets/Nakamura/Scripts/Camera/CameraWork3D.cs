@@ -37,7 +37,7 @@ namespace Dimension.Camera2D3D
             Vector3 posVec = (isRight) ? RightVec : LeftVec;
             float angle = (isRight) ? RightAngle : LeftAngle;
 
-            transformCache.position = Vector3.Lerp(transformCache.position, Target.Position + posVec, lerpTimer.Time);
+            transformCache.position = Vector3.Lerp(transformCache.position, Target.transform.position + posVec, lerpTimer.Time);
             transformCache.eulerAngles = Vector3.Lerp(transformCache.eulerAngles, new Vector3(20, angle, 0), lerpTimer.Time);
 
             beforeFlg = isRight;

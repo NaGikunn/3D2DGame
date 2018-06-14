@@ -10,14 +10,14 @@ namespace Dimension.Player
         //-----------------------------------------------------
         //  プロパティ
         //-----------------------------------------------------
-        protected TestPlayer PController { get; private set; }
+        protected PlayerManagerController PController { get; private set; }
         protected Mode GameMode { get { return PController.GController.GameMode; } }
         //=====================================================
         void Awake()
         {
             transformCache  = transform;
             rigidbodyCache  = GetComponent<Rigidbody>();
-            PController     = GetComponent<TestPlayer>();
+            PController     = GetComponent<PlayerManagerController>();
             Initialize();
         }
         //-----------------------------------------------------

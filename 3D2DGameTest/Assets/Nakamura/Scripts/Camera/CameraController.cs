@@ -9,7 +9,7 @@ namespace Dimension.Camera2D3D
     {
         GameController gController;
 
-        public TestPlayer player;
+        public PlayerManagerController player;
         CameraWork cWork;
 
         //-----------------------------------------------------

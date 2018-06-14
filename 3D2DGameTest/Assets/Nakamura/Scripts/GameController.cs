@@ -14,7 +14,7 @@ namespace Dimension
     public class GameController : MonoBehaviour
     {
         public CameraController cController;
-        public TestPlayer       pController;
+        public Player.PlayerManagerController       pController;
 
         //-----------------------------------------------------
         //  プロパティ

@@ -13,7 +13,7 @@ namespace Dimension.Camera2D3D
         protected CameraController CController { get; private set; }
         protected Mode GameMode { get { return CController.GetGameMode(); } }
         protected Camera MyCamera   { get; private set; }
-        protected TestPlayer Target { get; private set; }
+        protected PlayerManagerController Target { get; private set; }
         //=====================================================
         void Awake()
         {
@@ -24,7 +24,7 @@ namespace Dimension.Camera2D3D
         //-----------------------------------------------------
         //  Targetを設定
         //-----------------------------------------------------
-        public void SetTarget(TestPlayer target)
+        public void SetTarget(PlayerManagerController target)
         {
             if (Target == null) Target = target;
         }

@@ -6,7 +6,7 @@ public class PlayerManagerController : MonoBehaviour
 {
     PlayerMoveController playermove;
     public bool isStop { get; set; }
-
+    public bool IsRight { get; set; }
 	// Use this for initialization
 	void Start ()
     {

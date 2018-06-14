@@ -28,8 +28,8 @@ namespace Dimension.Camera2D3D
 
             transformCache.localPosition = new Vector3(
                 transformCache.localPosition.x,
-                Mathf.Clamp(Target.Position.y, MOVE_HEIGHT_MIN, MOVE_HEIGHT_MAX),
-                Mathf.Clamp(Target.Position.z, MOVE_WIDTH_MIN, MOVE_WIDTH_MAX)
+                Mathf.Clamp(Target.transform.position.y, MOVE_HEIGHT_MIN, MOVE_HEIGHT_MAX),
+                Mathf.Clamp(Target.transform.position.z, MOVE_WIDTH_MIN, MOVE_WIDTH_MAX)
                 );
         }
     }
