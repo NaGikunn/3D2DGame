@@ -15,10 +15,17 @@ public class Player3DController : PlayerMoveController
         var h = Input.GetAxis("Horizontal") * speed;
         var v = Input.GetAxis("Vertical") * speed;
         var AxisInput = new Vector3(h, 0.0f, v);
-        transform.position += AxisInput * Time.deltaTime;
+        transform.position -= AxisInput * Time.deltaTime;
         //回転
-        var degree = Mathf.Atan2(AxisInput.x, AxisInput.z) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(Vector3.up * degree);
+        //var degree = Mathf.Atan2(AxisInput.x, AxisInput.z) * Mathf.Rad2Deg;
+        //transform.rotation = Quaternion.Euler(Vector3.down * degree);
+        if (Input.GetButton("Horizontal") || Input.GetButton("Vertical"))
+        {
+            transform.rotation = Quaternion.LookRotation(transform.position -
+            (Vector3.right * Input.GetAxisRaw("Horizontal")) -
+            (Vector3.forward * Input.GetAxisRaw("Vertical"))
+            - transform.position);
+        }
         //ジャンプ
         //BFFALO　3番キーを押したら
         if (Input.GetButtonDown("JoyStick2") && !Jump)
