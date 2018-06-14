@@ -1,26 +1,32 @@
 ﻿using UnityEngine;
+using Dimension.Player;
 
 namespace Dimension.Camera2D3D
 {
     public abstract class CameraWork : MonoBehaviour
     {
         protected Transform transformCache;
-        protected Camera _myCamera;
 
         //-----------------------------------------------------
         //  プロパティ
         //-----------------------------------------------------
-        public Transform CameraTarget { get; set; }
-        protected Camera MyCamera
-        {
-            get { return _myCamera; }
-            private set { _myCamera = value; }
-        }
+        protected CameraController CController { get; private set; }
+        protected Mode GameMode { get { return CController.GetGameMode(); } }
+        protected Camera MyCamera   { get; private set; }
+        protected TestPlayer Target { get; private set; }
         //=====================================================
         void Awake()
         {
-            transformCache = transform;
-            MyCamera = GetComponent<Camera>();
+            transformCache  = transform;
+            CController     = GetComponent<CameraController>();
+            MyCamera        = GetComponent<Camera>();
+        }
+        //-----------------------------------------------------
+        //  Targetを設定
+        //-----------------------------------------------------
+        public void SetTarget(TestPlayer target)
+        {
+            if (Target == null) Target = target;
         }
         //-----------------------------------------------------
         //  抽象メソッド

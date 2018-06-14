@@ -13,68 +13,51 @@ namespace Dimension
     }
     public class GameController : MonoBehaviour
     {
-        public StageController stageController;
-        public CameraController cameraController;
-        public TestPlayer player;
+        public CameraController cController;
+        public TestPlayer       pController;
 
-        delegate void Switch2DTo3D();
-        delegate void Switch3DTo2D();
-
-        bool isRun = false;
-
+        //-----------------------------------------------------
+        //  プロパティ
+        //-----------------------------------------------------
+        public Mode GameMode { get; private set; }
         //=====================================================
         void Start()
         {
+            cController.SetGameController(this);
+            pController.SetGameController(this);
+
+            ChangeMode3D();
+        }
+        //-----------------------------------------------------
+        //  3D2Dの切り替え
+        //-----------------------------------------------------
+        public void ChangeDimension()
+        {
+            ChangeMode<PlayerMoverNull, CameraChangeWork>();
+        }
+        //-----------------------------------------------------
+        //  3DModeへ切り替え
+        //-----------------------------------------------------
+        public void ChangeMode3D()
+        {
             ChangeMode<PlayerMover3D, CameraWork3D>();
-            DuringFadeEnabled(true);
-        }
-        void OnGUI()
-        {
-            if (isRun) return;
-
-            if (GUI.Button(new Rect(300, 10, 100, 30), "2DMode"))
-            {
-                StartCoroutine(ChangeModeCoroutine(Mode.Second));
-            }
-            if (GUI.Button(new Rect(300, 50, 100, 30), "3DMode"))
-            {
-                StartCoroutine(ChangeModeCoroutine(Mode.Third));
-            }
+            GameMode = Mode.Third;
         }
         //-----------------------------------------------------
-        //  Modeの変更コルーチン
+        //  2DModeへ切り替え
         //-----------------------------------------------------
-        IEnumerator ChangeModeCoroutine(Mode mode)
+        public void ChangeMode2D()
         {
-            DuringFadeEnabled(false);
-
-            yield return StartCoroutine(cameraController.FadeOutCoroutine());
-
-            switch (mode) {
-                case Mode.Second: ChangeMode<PlayerMover2D, CameraWork2D>(); break;
-                case Mode.Third:  ChangeMode<PlayerMover3D, CameraWork3D>(); break;
-            }
-            stageController.ChangeStageMode(mode);
-
-            yield return new WaitForSeconds(0.5f);
-            yield return StartCoroutine(cameraController.FadeInCoroutine());
-
-            DuringFadeEnabled(true);
+            ChangeMode<PlayerMover2D, CameraWork2D>();
+            GameMode = Mode.Second;
         }
         //-----------------------------------------------------
         //  Modeの変更
         //-----------------------------------------------------
         void ChangeMode<PM, CW>() where PM : PlayerMover where CW : CameraWork
         {
-            player.ChangeMover<PM>();
-            cameraController.ChangeWork<CW>();
-        }
-        //-----------------------------------------------------
-        //  フェード中の処理の有無
-        //-----------------------------------------------------
-        void DuringFadeEnabled(bool flg)
-        {
-            isRun = player.IsStop = !flg;
+            pController.ChangeMover<PM>();
+            cController.ChangeWork<CW>();
         }
     }
 }
