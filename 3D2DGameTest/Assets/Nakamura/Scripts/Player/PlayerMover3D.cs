@@ -9,27 +9,28 @@ namespace Dimension.Player
         //-----------------------------------------------------
         public override void Initialize()
         {
-            transformCache.position = new Vector3(0, 2, 0);
-
-            gameObject.AddComponent(typeof(Rigidbody));
+            //rigidbodyCache.useGravity = true;
         }
         //-----------------------------------------------------
         //  行動
         //-----------------------------------------------------
-        public override void Mover()
+        public override void Move(KeyState key)
         {
-            if (Input.GetKey(KeyCode.UpArrow)) {
-                transformCache.position += transformCache.forward * 3.0f * Time.deltaTime;
+            // 移動方向
+            Vector3 moveVec = new Vector3(-key.Axis.x, 0, -key.Axis.y);
+
+            // ジャンプ
+            if (PController.IsGround  && key.Jump) {
+                rigidbodyCache.AddForce(Vector3.up * 250);
             }
-            else if (Input.GetKey(KeyCode.DownArrow)) {
-                transformCache.position += -transformCache.forward * 3.0f * Time.deltaTime;
+
+            // モード切替
+            if (key.Action) {
+                PController.GController.ChangeDimension();
             }
-            if (Input.GetKey(KeyCode.RightArrow)) {
-                transformCache.position += transformCache.right * 3.0f * Time.deltaTime;
-            }
-            else if (Input.GetKey(KeyCode.LeftArrow)) {
-                transformCache.position += -transformCache.right * 3.0f * Time.deltaTime;
-            }
+
+            // 更新
+            transformCache.localPosition += moveVec * 3.0f * Time.deltaTime;
         }
     }
 }
