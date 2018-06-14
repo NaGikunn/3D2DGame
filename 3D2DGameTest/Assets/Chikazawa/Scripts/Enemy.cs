@@ -127,14 +127,27 @@ namespace StateMachine
 
             public override void Execute()//Update処理
             {
-                //5秒毎に更新
-                if(owner.StayPoint.Length >= 2 || owner.P_Targetlostflg)
+                //徘徊状態か、警戒状態の時のみ確認
+                if (owner.StayPoint.Length >= 2 || owner.P_Targetlostflg)
+                {
                     Count_MoveCancel += Time.deltaTime;
+                }
+                //5秒毎に稼働状態を確認
                 if (Count_MoveCancel >= 5.0f)
                 {
-                    if(CancelArea.x >= MoveCanceler.x - owner.transform.position.x && CancelArea.y >= MoveCanceler.y - owner.transform.position.y)
-                    MoveCanceler = owner.transform.position;
-
+                    //2以上移動していれば状態を更新
+                    if (CancelArea.x >= MoveCanceler.x - owner.transform.position.x && CancelArea.y >= MoveCanceler.y - owner.transform.position.y)
+                        MoveCanceler = owner.transform.position;
+                    //移動していなかったら硬直状態と判定
+                    else
+                    {
+                        //状態を初期状態に戻してリスポーン
+                        owner.transform.rotation = Quaternion.Euler(0, 0, 0);
+                        owner.transform.position = owner.StartPos;
+                        owner.P_Targetlostflg = false;
+                        Change_Point();
+                        Count_MoveCancel = 0;
+                    }
                 }
                 //間に障害物がない状態で追跡範囲に入ったら、追跡ステートに遷移
                 if (owner.pursuit.PursuitFlg && owner.pursuit.hitTag == "Player" && !owner.attack.AttackStopflg)
@@ -160,6 +173,7 @@ namespace StateMachine
                     else if (StayTime < owner.WalkStopTime)
                     {
                         StayTime += Time.deltaTime;
+                        Count_MoveCancel = 0;
                     }
                     //目標地点を変更してカウントリセット
                     else
