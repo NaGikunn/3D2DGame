@@ -1,4 +1,8 @@
 sceneSetups:
-- path: Assets/Hirano/Sceane/StageTutorial_m.unity
+<<<<<<< HEAD
+- path: Assets/Matubara/main.unity
+=======
+- path: Assets/Kato/Stage.unity
+>>>>>>> f89a0f52e307361c0952f668e71b3f2c85353330
   isLoaded: 1
   isActive: 1
