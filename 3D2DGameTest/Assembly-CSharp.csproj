@@ -1,19 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <LangVersion>4</LangVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{CCEC5702-18F7-5C8E-D4AD-7D63728F8BC9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>Assets</BaseDirectory>
   </PropertyGroup>
@@ -27,6 +29,7 @@
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -36,6 +39,7 @@
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -51,103 +55,105 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Chikazawa\Scripts\Enemy.cs" />
-     <Compile Include="Assets\Chikazawa\Scripts\Get_Attack.cs" />
-     <Compile Include="Assets\Chikazawa\Scripts\Get_Pursuit.cs" />
-     <Compile Include="Assets\Chikazawa\Scripts\Players.cs" />
-     <Compile Include="Assets\Chikazawa\Scripts\State.cs" />
-     <Compile Include="Assets\Chikazawa\Scripts\StatefulObjectBase.cs" />
-     <Compile Include="Assets\Chikazawa\Scripts\StateMachine.cs" />
-     <Compile Include="Assets\Hirano\Scripts\CameraControl.cs" />
-     <Compile Include="Assets\Hirano\Scripts\MoveIcon.cs" />
-     <Compile Include="Assets\Hirano\Scripts\PlayerManager.cs" />
-     <Compile Include="Assets\Hirano\Scripts\PlayerMove.cs" />
-     <Compile Include="Assets\Hirano\Scripts\TestCamera.cs" />
-     <Compile Include="Assets\Hirano\Scripts\TestMove.cs" />
-     <Compile Include="Assets\Hirano\Scripts\TochTest.cs" />
-     <Compile Include="Assets\Hirano\Test.cs" />
-     <Compile Include="Assets\Kato\Black Knight\AnimationEvent.cs" />
-     <Compile Include="Assets\Kato\Black Knight\demo\UnitControl.cs" />
-     <Compile Include="Assets\Kato\RPGPackFree\Scripts\BowString.cs" />
-     <Compile Include="Assets\Kato\RPGPackFree\Scripts\OpenChest.cs" />
-     <Compile Include="Assets\Kato\Scripts\GameSystem.cs" />
-     <Compile Include="Assets\Kato\Scripts\Roll.cs" />
-     <Compile Include="Assets\Kato\Scripts\TimeLimitObj.cs" />
-     <Compile Include="Assets\Kato\Scripts\TimerScript.cs" />
-     <Compile Include="Assets\Matubara\UnityTile3D\Tile3D\Tile3D.cs" />
-     <Compile Include="Assets\Matubara\UnityTile3D\Tile3D\Vector3Ext.cs" />
-     <Compile Include="Assets\Nakamura\Scripts\Camera\CameraController.cs" />
-     <Compile Include="Assets\Nakamura\Scripts\Camera\CameraWork.cs" />
-     <Compile Include="Assets\Nakamura\Scripts\Camera\CameraWork2D.cs" />
-     <Compile Include="Assets\Nakamura\Scripts\Camera\CameraWork3D.cs" />
-     <Compile Include="Assets\Nakamura\Scripts\Camera\PostEffect\PostEffect.cs" />
-     <Compile Include="Assets\Nakamura\Scripts\GameController.cs" />
-     <Compile Include="Assets\Nakamura\Scripts\Player\PlayerMover.cs" />
-     <Compile Include="Assets\Nakamura\Scripts\Player\PlayerMover2D.cs" />
-     <Compile Include="Assets\Nakamura\Scripts\Player\PlayerMover3D.cs" />
-     <Compile Include="Assets\Nakamura\Scripts\Player\TestPlayer.cs" />
-     <Compile Include="Assets\Nakamura\Scripts\Stage\MapData.cs" />
-     <Compile Include="Assets\Nakamura\Scripts\Stage\StageController.cs" />
-     <Compile Include="Assets\Nakamura\Scripts\Stage\StageObject.cs" />
-     <Compile Include="Assets\Nakamura\Scripts\Stage\StageObject2D.cs" />
-     <Compile Include="Assets\Nakamura\Scripts\Stage\StageObject3D.cs" />
-     <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_Skin.shader" />
-     <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_WrappingPaper.shader" />
-     <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_Fur.shader" />
-     <None Include="Assets\Kato\Blade Sounds\Blade Sounds Readme.txt" />
-     <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_Standard.shader" />
-     <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_Snow.shader" />
-     <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_Halloween.shader" />
-     <None Include="Assets\Nakamura\Shaders\Surface\WipeCircle.shader" />
-     <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_velvet.shader" />
-     <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_VertexShadow.shader" />
-     <None Include="Assets\Nakamura\Shaders\Surface\Grass.shader" />
-     <None Include="Assets\Nakamura\Shaders\Surface\Toon.shader" />
-     <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_HW_Ghost.shader" />
-     <None Include="Assets\Kato\Black Knight\ReadMe.txt" />
-     <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_Ribbon.shader" />
-     <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_TreeLight.shader" />
-     <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_TransBlue.shader" />
-     <None Include="Assets\Nakamura\Shaders\Surface\Blend.shader" />
- <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Networking">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.TestRunner">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
- </Reference>
- <Reference Include="nunit.framework">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Timeline">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.UIAutomation">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UIAutomation/UnityEngine.UIAutomation.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.GoogleAudioSpatializer">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.HoloLens">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.SpatialTracking">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Advertisements">
- <HintPath>C:/ProgramData/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.3/UnityEngine.Advertisements.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Analytics">
- <HintPath>C:/ProgramData/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.13/UnityEngine.Analytics.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Purchasing">
- <HintPath>C:/ProgramData/Unity/cache/packages/packages.unity.com/com.unity.purchasing@0.0.19/UnityEngine.Purchasing.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.StandardEvents">
- <HintPath>C:/ProgramData/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
- </Reference>
+    <Compile Include="Assets\Chikazawa\Scripts\Enemy.cs" />
+    <Compile Include="Assets\Chikazawa\Scripts\Get_Attack.cs" />
+    <Compile Include="Assets\Chikazawa\Scripts\Get_Pursuit.cs" />
+    <Compile Include="Assets\Chikazawa\Scripts\Players.cs" />
+    <Compile Include="Assets\Chikazawa\Scripts\State.cs" />
+    <Compile Include="Assets\Chikazawa\Scripts\StatefulObjectBase.cs" />
+    <Compile Include="Assets\Chikazawa\Scripts\StateMachine.cs" />
+    <Compile Include="Assets\Hirano\Scripts\CameraControl.cs" />
+    <Compile Include="Assets\Hirano\Scripts\MoveIcon.cs" />
+    <Compile Include="Assets\Hirano\Scripts\PlayerManager.cs" />
+    <Compile Include="Assets\Hirano\Scripts\PlayerMove.cs" />
+    <Compile Include="Assets\Hirano\Scripts\TestCamera.cs" />
+    <Compile Include="Assets\Hirano\Scripts\TestMove.cs" />
+    <Compile Include="Assets\Hirano\Scripts\TochTest.cs" />
+    <Compile Include="Assets\Hirano\Test.cs" />
+    <Compile Include="Assets\Kato\Black Knight\AnimationEvent.cs" />
+    <Compile Include="Assets\Kato\Black Knight\demo\UnitControl.cs" />
+    <Compile Include="Assets\Kato\RPGPackFree\Scripts\BowString.cs" />
+    <Compile Include="Assets\Kato\RPGPackFree\Scripts\OpenChest.cs" />
+    <Compile Include="Assets\Kato\Scripts\Button.cs" />
+    <Compile Include="Assets\Kato\Scripts\GameSystem.cs" />
+    <Compile Include="Assets\Kato\Scripts\Roll.cs" />
+    <Compile Include="Assets\Kato\Scripts\TimeLimitObj.cs" />
+    <Compile Include="Assets\Kato\Scripts\TimerScript.cs" />
+    <Compile Include="Assets\Kato\Scripts\Title.cs" />
+    <Compile Include="Assets\Matubara\UnityTile3D\Tile3D\Tile3D.cs" />
+    <Compile Include="Assets\Matubara\UnityTile3D\Tile3D\Vector3Ext.cs" />
+    <Compile Include="Assets\Nakamura\Scripts\Camera\CameraController.cs" />
+    <Compile Include="Assets\Nakamura\Scripts\Camera\CameraWork.cs" />
+    <Compile Include="Assets\Nakamura\Scripts\Camera\CameraWork2D.cs" />
+    <Compile Include="Assets\Nakamura\Scripts\Camera\CameraWork3D.cs" />
+    <Compile Include="Assets\Nakamura\Scripts\Camera\PostEffect\PostEffect.cs" />
+    <Compile Include="Assets\Nakamura\Scripts\GameController.cs" />
+    <Compile Include="Assets\Nakamura\Scripts\Player\PlayerMover.cs" />
+    <Compile Include="Assets\Nakamura\Scripts\Player\PlayerMover2D.cs" />
+    <Compile Include="Assets\Nakamura\Scripts\Player\PlayerMover3D.cs" />
+    <Compile Include="Assets\Nakamura\Scripts\Player\TestPlayer.cs" />
+    <Compile Include="Assets\Nakamura\Scripts\Stage\MapData.cs" />
+    <Compile Include="Assets\Nakamura\Scripts\Stage\StageController.cs" />
+    <Compile Include="Assets\Nakamura\Scripts\Stage\StageObject.cs" />
+    <Compile Include="Assets\Nakamura\Scripts\Stage\StageObject2D.cs" />
+    <Compile Include="Assets\Nakamura\Scripts\Stage\StageObject3D.cs" />
+    <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_Skin.shader" />
+    <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_WrappingPaper.shader" />
+    <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_Fur.shader" />
+    <None Include="Assets\Kato\Blade Sounds\Blade Sounds Readme.txt" />
+    <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_Standard.shader" />
+    <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_Snow.shader" />
+    <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_Halloween.shader" />
+    <None Include="Assets\Nakamura\Shaders\Surface\WipeCircle.shader" />
+    <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_velvet.shader" />
+    <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_VertexShadow.shader" />
+    <None Include="Assets\Nakamura\Shaders\Surface\Grass.shader" />
+    <None Include="Assets\Nakamura\Shaders\Surface\Toon.shader" />
+    <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_HW_Ghost.shader" />
+    <None Include="Assets\Kato\Black Knight\ReadMe.txt" />
+    <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_Ribbon.shader" />
+    <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_TreeLight.shader" />
+    <None Include="Assets\Hirano\Query\Query-Chan\Shaders\PQ_TransBlue.shader" />
+    <None Include="Assets\Nakamura\Shaders\Surface\Blend.shader" />
+    <Reference Include="UnityEngine.UI">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TestRunner">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Timeline">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIAutomation">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UIAutomation/UnityEngine.UIAutomation.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GoogleAudioSpatializer">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.HoloLens">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpatialTracking">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Advertisements">
+      <HintPath>C:/ProgramData/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.3/UnityEngine.Advertisements.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Analytics">
+      <HintPath>C:/ProgramData/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.13/UnityEngine.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Purchasing">
+      <HintPath>C:/ProgramData/Unity/cache/packages/packages.unity.com/com.unity.purchasing@0.0.19/UnityEngine.Purchasing.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.StandardEvents">
+      <HintPath>C:/ProgramData/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -157,5 +163,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  
 </Project>
