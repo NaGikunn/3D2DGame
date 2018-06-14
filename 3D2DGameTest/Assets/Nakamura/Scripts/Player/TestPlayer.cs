@@ -12,7 +12,6 @@ namespace Dimension.Player
         void Start()
         {
             IsStop = false;
-            // playerMovement = gameObject.AddComponent<PlayerMover3D>();
         }
         void Update()
         {
