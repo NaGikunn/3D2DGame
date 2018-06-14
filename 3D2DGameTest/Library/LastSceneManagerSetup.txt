@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Matubara/Stage1.unity
-=======
-- path: Assets/Kato/Stage.unity
->>>>>>> 66558d89d533e5e1b60a0db1f2a9da662e87292d
+- path: Assets/Matubara/main.unity
   isLoaded: 1
   isActive: 1
