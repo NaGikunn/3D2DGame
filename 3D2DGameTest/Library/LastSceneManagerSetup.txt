@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Hirano/Sceane/StageTutorial_m.unity
+- path: Assets/Hirano/Sceane/StageSelect.unity
   isLoaded: 1
   isActive: 1
