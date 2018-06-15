@@ -52,5 +52,10 @@ public class Player3DController : PlayerMoveController
         {
             Manager.GController.ChangeDimension();
         }
+        //救済措置
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            transform.position = new Vector3(0, 1, 0);
+        }
     }
 }
