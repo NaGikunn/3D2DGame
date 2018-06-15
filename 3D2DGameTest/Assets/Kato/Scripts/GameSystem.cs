@@ -13,6 +13,6 @@ public class GameSystem : MonoBehaviour {
     public void Game()
     {
         // 「GameScene」シーンに遷移する
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("StageSelect");
     }
 }

@@ -13,8 +13,8 @@ namespace Dimension
     }
     public class GameController : MonoBehaviour
     {
-        public CameraController cController;
-        public Player.PlayerManagerController       pController;
+        public CameraController         cController;
+        public PlayerManagerController  pController;
 
         //-----------------------------------------------------
         //  プロパティ
@@ -40,7 +40,7 @@ namespace Dimension
         //-----------------------------------------------------
         public void ChangeMode3D()
         {
-            ChangeMode<PlayerMover3D, CameraWork3D>();
+            ChangeMode<Player3DController, CameraWork3D>();
             GameMode = Mode.Third;
         }
         //-----------------------------------------------------
@@ -48,15 +48,15 @@ namespace Dimension
         //-----------------------------------------------------
         public void ChangeMode2D()
         {
-            ChangeMode<PlayerMover2D, CameraWork2D>();
+            ChangeMode<Player2DController, CameraWork2D>();
             GameMode = Mode.Second;
         }
         //-----------------------------------------------------
         //  Modeの変更
         //-----------------------------------------------------
-        void ChangeMode<PM, CW>() where PM : PlayerMover where CW : CameraWork
+        void ChangeMode<PM, CW>() where PM : PlayerMoveController where CW : CameraWork
         {
-            pController.ChangeMover<PM>();
+            pController.PlayerMoveChange<PM>();
             cController.ChangeWork<CW>();
         }
     }

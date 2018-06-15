@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public abstract class PlayerMoveController : MonoBehaviour
 {
@@ -13,10 +15,11 @@ public abstract class PlayerMoveController : MonoBehaviour
     void Awake()
     {
         playerposition = transform.position;
-        PositionInitialization();
         anim = GetComponent<Animator>();
         rig = GetComponent<Rigidbody>();
         Manager = GetComponent<PlayerManagerController>();
+
+        PositionInitialization();
     }
 
     public abstract void PositionInitialization();
@@ -29,5 +32,19 @@ public abstract class PlayerMoveController : MonoBehaviour
             Jump = false;
             anim.SetBool("Jump", false);
         }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == ("Gole"))
+        {
+            Manager.ClearLabel.SetActive(true);
+            Invoke("StageSlect", 2.0f);
+        }
+    }
+ 
+     void StageSlect()
+    {
+        SceneManager.LoadScene("StageSelect");
     }
 }

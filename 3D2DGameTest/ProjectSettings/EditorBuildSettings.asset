@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Kato/Title.unity
+    guid: 76fac5cc4b3944447aef030207c7d9f1
+  - enabled: 1
     path: Assets/Hirano/Sceane/StageSelect.unity
     guid: d50f9435d0eefa64c999d99327cfe48d
   - enabled: 1
