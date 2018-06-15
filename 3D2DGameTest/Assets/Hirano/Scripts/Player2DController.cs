@@ -22,7 +22,7 @@ public class Player2DController : PlayerMoveController
             var h = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
             var AxisInput = new Vector3(0, 0.0f, h);
             transform.position += AxisInput;
-            var MoveInput = AxisInput.magnitude >= 0.1f;
+            var MoveInput = AxisInput.magnitude <= 0.1f;
             //左スティックから入力がありそれが0.1f以上ならアニメーションを再生
             if (MoveInput)
             {
@@ -40,7 +40,7 @@ public class Player2DController : PlayerMoveController
             var h = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
             var AxisInput = new Vector3(0, 0.0f, h);
             transform.position -= AxisInput;
-            var MoveInput = AxisInput.magnitude >= 0.1f;
+            var MoveInput = AxisInput.magnitude <= 0.1f;
             //左スティックから入力がありそれが0.1f以上ならアニメーションを再生
             if (MoveInput)
             {
