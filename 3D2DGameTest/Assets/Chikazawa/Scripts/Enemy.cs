@@ -22,7 +22,7 @@ namespace StateMachine
         public bool IsFly;
 
         [SerializeField]                   //巡回地点
-        Transform[] StayPoint;
+        Transform[] StayPoint;             //設定座標が1の時はその場で待機
 
         [SerializeField]
         float speed = 4f;                  //移動
@@ -34,7 +34,7 @@ namespace StateMachine
         [SerializeField]
         float TargetLostTime;             //見失った時に立ち止まる時間
 
-        bool P_Targetlostflg;               //プレーヤーを見失った時に発生
+        bool P_Targetlostflg;             //プレーヤーを見失った時に発生
 
         [SerializeField]
         float attackInterval = 2f;        //攻撃頻度
@@ -127,6 +127,10 @@ namespace StateMachine
 
             public override void Execute()//Update処理
             {
+                ///<summary>
+                ///目標地点の関係で移動ができなくなったとき
+                ///初期位置にワープして対応する
+                ///</summary>
                 //徘徊状態か、警戒状態の時のみ確認
                 if (owner.StayPoint.Length >= 2 || owner.P_Targetlostflg)
                 {
@@ -135,19 +139,7 @@ namespace StateMachine
                 //5秒毎に稼働状態を確認
                 if (Count_MoveCancel >= 5.0f)
                 {
-                    //2以上移動していれば状態を更新
-                    if (CancelArea.x >= MoveCanceler.x - owner.transform.position.x && CancelArea.y >= MoveCanceler.y - owner.transform.position.y)
-                        MoveCanceler = owner.transform.position;
-                    //移動していなかったら硬直状態と判定
-                    else
-                    {
-                        //状態を初期状態に戻してリスポーン
-                        owner.transform.rotation = Quaternion.Euler(0, 0, 0);
-                        owner.transform.position = owner.StartPos;
-                        owner.P_Targetlostflg = false;
-                        Change_Point();
-                        Count_MoveCancel = 0;
-                    }
+                    ReSpawn();
                 }
                 //間に障害物がない状態で追跡範囲に入ったら、追跡ステートに遷移
                 if (owner.pursuit.PursuitFlg && owner.pursuit.hitTag == "Player" && !owner.attack.AttackStopflg)
@@ -224,7 +216,7 @@ namespace StateMachine
                 owner.P_Targetlostflg = false;
             }
 
-            //次の目標地点を設定する
+            //次の目標地点を設定する。
             void Change_Point()
             {
                 //次の地点を取得
@@ -236,6 +228,24 @@ namespace StateMachine
                 }
                 //目標地点を設定する
                 targetPoint = owner.StayPoint[PointCount].position;
+            }
+
+            void ReSpawn()
+            {
+                //縦横どちらかに2以上移動していれば状態を更新
+                if (CancelArea.x >= MoveCanceler.x - owner.transform.position.x && CancelArea.y >= MoveCanceler.y - owner.transform.position.y)
+                    MoveCanceler = owner.transform.position;
+                //移動していなかったら硬直状態と判定
+                else
+                {
+                    //状態を初期状態に戻してリスポーン
+                    owner.transform.rotation = Quaternion.Euler(0, 0, 0);
+                    owner.transform.position = owner.StartPos;
+                    owner.P_Targetlostflg = false;
+                    Change_Point();
+                    Count_MoveCancel = 0;
+                }
+
             }
         }
 

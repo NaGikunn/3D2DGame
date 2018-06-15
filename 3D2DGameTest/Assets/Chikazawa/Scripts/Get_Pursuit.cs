@@ -8,7 +8,7 @@ public class Get_Pursuit : MonoBehaviour {
     public bool PursuitFlg = false;
 
     public StateMachine.Enemy enemy;
-
+    
     Ray ray;
     Vector3 DirecthionToPlayer;
 
@@ -19,6 +19,7 @@ public class Get_Pursuit : MonoBehaviour {
 
     void Update()
     {
+        if(PursuitFlg )
         DirecthionToPlayer = enemy.player.transform.position - enemy.gameObject.transform.position;
 
         // とりあえずPlayerに向かってRayを飛ばす（第1引数がRayの発射座標、第2引数がRayの向き）
