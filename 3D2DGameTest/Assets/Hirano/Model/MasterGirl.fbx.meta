@@ -115,6 +115,7 @@ ModelImporter:
     7400006: armature|Walk
     7400008: armature|Stand (1)
     7400010: armature|Jump
+    7400012: armature|Walk
     9500000: //RootNode
     13700000: MagicalAdventuel3
   externalObjects:
@@ -150,17 +151,17 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: armature|Jump
-      takeName: armature|Jump
+      name: armature|Walk
+      takeName: armature|Walk
       firstFrame: 0
-      lastFrame: 40
+      lastFrame: 60
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
