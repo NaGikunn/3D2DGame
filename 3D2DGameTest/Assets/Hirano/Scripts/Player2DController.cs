@@ -16,25 +16,50 @@ public class Player2DController : PlayerMoveController
 
     public override void Movement()
     {
-        var speed = 3.0f;
-        var h = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-        var AxisInput = new Vector3(0, 0.0f,h);
-        transform.position += AxisInput;
-        var MoveInput = AxisInput.magnitude >= 0.1f;
-        //左スティックから入力がありそれが0.1f以上ならアニメーションを再生
-        if (MoveInput)
+        if (!Manager.IsRight)
         {
-            //歩くアニメーション
-            anim.SetBool("walk", true);
+            var speed = 3.0f;
+            var h = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+            var AxisInput = new Vector3(0, 0.0f, h);
+            transform.position += AxisInput;
+            var MoveInput = AxisInput.magnitude >= 0.1f;
+            //左スティックから入力がありそれが0.1f以上ならアニメーションを再生
+            if (MoveInput)
+            {
+                //歩くアニメーション
+                anim.SetBool("walk", true);
+            }
+            else
+            {
+                anim.SetBool("walk", false);
+            }
         }
         else
         {
-            anim.SetBool("walk", false);
+            var speed = 3.0f;
+            var h = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+            var AxisInput = new Vector3(0, 0.0f, h);
+            transform.position -= AxisInput;
+            var MoveInput = AxisInput.magnitude >= 0.1f;
+            //左スティックから入力がありそれが0.1f以上ならアニメーションを再生
+            if (MoveInput)
+            {
+                //歩くアニメーション
+                anim.SetBool("walk", true);
+            }
+            else
+            {
+                anim.SetBool("walk", false);
+            }
         }
+
+
         //BFFALO　3番キーを押したら
         if (Input.GetButtonDown("JoyStick2") && !Jump)
         {
             rig.AddForce(Vector2.up * flap);
+            anim.SetBool("Jump", true);
+            anim.SetBool("walk", false);
             Jump = true;
         }
         //BFFALO　２番キーを押したら

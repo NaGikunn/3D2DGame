@@ -7,8 +7,8 @@ using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(Button))]
 
-public class GameSystem : MonoBehaviour {
-
+public class GameSystem : MonoBehaviour
+{
 
     public void Game()
     {

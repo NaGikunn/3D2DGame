@@ -6,6 +6,7 @@ TagManager:
   tags:
   - TransportObj
   - Stage
+  - Gole
   layers:
   - Default
   - TransparentFX
