@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Kato/Title.unity
+    guid: 76fac5cc4b3944447aef030207c7d9f1
+  - enabled: 1
+    path: Assets/Kato/Game.unity
+    guid: 475c09123e3d8cc4c8dc0f79cfe537ab
