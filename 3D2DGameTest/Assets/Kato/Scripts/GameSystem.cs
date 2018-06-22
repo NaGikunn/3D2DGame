@@ -6,7 +6,8 @@ using UnityEngine.EventSystems;
 
 public class GameSystem : MonoBehaviour
 {
-    public void OnMouseDown()
+    
+        public void OnMouseDown()
     {
 
         StartCoroutine("Sample");　//コルーチンを呼び出す
@@ -16,12 +17,8 @@ public class GameSystem : MonoBehaviour
     // コルーチン
     private IEnumerator Sample()
     {
-
-
         yield return new WaitForSeconds(5.0f);　 //5秒たってから
         Application.LoadLevel("Game");　　　　　//画面遷移
-
-
     }
 }
 
