@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Kato/Title.unity
+- path: Assets/Kato/Stage2.unity
   isLoaded: 1
   isActive: 1
